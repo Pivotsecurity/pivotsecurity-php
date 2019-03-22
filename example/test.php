@@ -1,19 +1,14 @@
 <?php
 
-require(dirname(__FILE__) . '/../init.php');
-require(dirname(__FILE__) . '/../vendor/autoload.php');
+require(__DIR__ . '/../init.php');
+use \PivotSecurity\Account;
 
-//$account = new PivotSecurity\Account(null, 'd48f21a6e0c94880b61daa2b9e5a2327');
+$ac = new Account('','d48f21a6e0c94880b61daa2b9e5a2327');
 
-//$account->info('test2@pcs.com');
+$response = $ac->info('A13');
 
+echo var_dump($response);
 
-$url = "http://localhost:8080/api/account/info";
-$response = \Httpful\Request::post($url, json_encode(array("uid"=>"A13")))
-    ->expectsJson()
-    ->basicAuth('d48f21a6e0c94880b61daa2b9e5a2327','')
-    ->send();
-
-var_dump($response->body[0]->email);
+//var_dump(json_decode(json_encode($response->body, true)));
                         
                         

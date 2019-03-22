@@ -2,6 +2,8 @@
 
 namespace PivotSecurity;
 
+use \Httpful\Request;
+
 final class Account extends PSAuth
 {
     const OBJECT_NAME = "account";
@@ -26,13 +28,9 @@ final class Account extends PSAuth
 		self::$private_key = $private_key;
 	}
 	
-	public static function info($email){
-		$result = self::$rest_client->post(self::OP_INFO, ['email' => $email], ['Accept' => ['text/json', 'application/json']]);
+	public static function info($uid = null, $email = null){
 		
-		//echo var_dump($result->decode_response());
-foreach($result as $key => $value)
-    var_dump($value);
-    		return $result;
+		$response = self::makerequest(self::OP_INFO, array("uid"=>$uid, 'email' => $email));
+		return $response;
 	}
-
 }
