@@ -6,7 +6,7 @@ abstract class PSAuth{
 
 		protected static $key = null;
 		protected static $format = 1; // 1- json, 2 - PHP Array
-		protected static $base_url = "http://localhost:8080/api/";
+		protected static $base_url = "https://api.pivotsecurity.com/api/";
 		
 	    public function __construct($key){
 	    	self::$key = $key;
