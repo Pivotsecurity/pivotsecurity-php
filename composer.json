@@ -19,10 +19,10 @@
     "php": ">=5.4.0",
     "ext-curl": "*",
     "ext-json": "*",
-    "ext-mbstring": "*"
+    "ext-mbstring": "*",
+  	"nategood/httpful": "*"
   },
   "require-dev": {
-  	"nategood/httpful": "*"
   },
   "autoload": {
     "pcs-1": { "PivotSecurity\\" : "lib/" }
