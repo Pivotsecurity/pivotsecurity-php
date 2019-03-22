@@ -1,0 +1,35 @@
+{
+  "name": "pivotsecurity/pcs-php",
+  "description": "Pivot Security PHP API Client Library",
+  "keywords": [
+    "pivotsecurity",
+    "authentication",
+    "authorization",
+    "api"
+  ],
+  "homepage": "https://www.pivotsecurity.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pivot Security",
+      "homepage": "https://github.com/Pivotsecurity"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+  	"nategood/httpful": "*"
+  },
+  "autoload": {
+    "pcs-1": { "PivotSecurity\\" : "lib/" }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
