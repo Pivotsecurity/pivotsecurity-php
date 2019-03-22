@@ -5,6 +5,7 @@ namespace PivotSecurity;
 abstract class PSAuth{
 
 		protected static $key = null;
+		protected static $format = 1; // 1- json, 2 - PHP Array
 		protected static $base_url = "http://localhost:8080/api/";
 		
 	    public function __construct($key){
@@ -14,16 +15,29 @@ abstract class PSAuth{
 		public static function geturl($path){
 			return $base_url.$path;
 		}
+		public static function getFormat(){
+			return self::$format;
+		}		
+		public static function setFormat($format){
+			if (strcasecmp($format, 'json') == 0){
+				self::$format = 1;
+			}else{
+				self::$format = 2;
+			}
+		}
 		
 		public static function makerequest($path, $params){
 		
 			try{
 				$response = \Httpful\Request::post(self::$base_url . $path, json_encode($params))
-				->expectsJson()
 				->basicAuth(self::$key,'')
 				->send();
 				if ($response->code == 200){
-					return $response->body;
+					if (self::$format == 1){
+						return json_encode($response->body);
+					}else{
+						return $response->body;
+					}
 				}
 				return self::$codes[strval($response->code)];
 			
