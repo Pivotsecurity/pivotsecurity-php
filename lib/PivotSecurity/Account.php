@@ -18,6 +18,9 @@ final class Account extends PSAuth
     const OP_UNLOCK = "account/unlock";
     const OP_TRAIN_ML = "account/trainml";
     const OP_TEST_ML = "account/testml";
+    const OP_AUTH_META = "account/authwithmetadata";
+    const OP_SEND_AUTH_META = "account/sendauthwithmetadata";
+    const OP_VERIFY_META = "account/verifywithmetadata";
     
  	public function __construct($public_key = null, $private_key = null){
     	parent::__construct($private_key);
@@ -55,6 +58,15 @@ final class Account extends PSAuth
 	}
 	public static function testml($uid = null, $email = null, $data = null){
 		return self::makerequest(self::OP_TEST_ML, array("uid"=>$uid, 'email' => $email, 'data' => $data));
+	}
+	public static function authWithMetadata($uid = null, $email = null, $metadata = null){
+		return self::makerequest(self::OP_AUTH_META, array("uid"=>$uid, 'email' => $email, 'data' => $data));
+	}
+	public static function sendAuthWithMetadata($uid = null, $email = null, $metadata = null){
+		return self::makerequest(self::OP_SEND_AUTH_META, array("uid"=>$uid, 'email' => $email, 'data' => $data));
+	}
+	public static function verifyAuthWithMetadata($uid = null, $email = null, $code = null){
+		return self::makerequest(self::OP_VERIFY_META, array("uid"=>$uid, 'email' => $email, 'code' => $code));
 	}
 
 }
