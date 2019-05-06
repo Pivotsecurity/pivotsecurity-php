@@ -21,6 +21,7 @@ final class Account extends PSAuth
     const OP_AUTH_META = "account/authwithmetadata";
     const OP_SEND_AUTH_META = "account/sendauthwithmetadata";
     const OP_VERIFY_META = "account/verifywithmetadata";
+    const OP_VERIFY_SESSION = "account/verifysession";
     
  	public function __construct($public_key = null, $private_key = null){
     	parent::__construct($private_key);
@@ -68,5 +69,7 @@ final class Account extends PSAuth
 	public static function verifyAuthWithMetadata($uid = null, $email = null, $code = null){
 		return self::makerequest(self::OP_VERIFY_META, array("uid"=>$uid, 'email' => $email, 'code' => $code));
 	}
-
+	public static function verifySession($uid = null, $email = null, $sessionid = null){
+		return self::makerequest(self::OP_VERIFY_SESSION, array("uid"=>$uid, 'email' => $email, 'sessionid' => $sessionid));
+	}
 }
