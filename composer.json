@@ -10,7 +10,7 @@
   "homepage": "https://www.pivotsecurity.com/",
   "license": "MIT",
   "minimum-stability":"stable",
-  "version": "master",
+  "version": "dev-master",
   "type": "library",
   "authors": [
     {
