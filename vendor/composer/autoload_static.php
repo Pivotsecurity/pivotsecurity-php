@@ -7,6 +7,13 @@ namespace Composer\Autoload;
 class ComposerStaticInit64eef85f79681d3cf49e36bd0273700a
 {
     public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'PivotSecurity\\' => 
+            array (
+                0 => __DIR__ . '/../..' . '/lib',
+            ),
+        ),
         'H' => 
         array (
             'Httpful' => 
