@@ -9,7 +9,9 @@
   ],
   "homepage": "https://www.pivotsecurity.com/",
   "license": "MIT",
-  "minimum-stability":"release1.0.1",
+  "minimum-stability":"stable",
+  "version": "master",
+  "type": "library",
   "authors": [
     {
       "name": "Pivot Security",
