@@ -20,25 +20,33 @@ composer require pivotsecurity/pcs-php
 require('vendor/autoload.php')
 
 use \PivotSecurity\Account;
+
 use \PivotSecurity\Customer;
 
+
 $ac = new Account(null,'d48f21a6e0c94880b61daa2b9e5a2327');
+
 $response = $ac->info('A13');
+
 echo var_dump($response);
 
 
 ## Manual:
 
 git clone https://github.com/Pivotsecurity/pivotsecurity-php.git
+
 cd pivotsecurity-php
 
 
 require('init.php')
 
 use \PivotSecurity\Account;
+
 use \PivotSecurity\Customer;
 
 $ac = new Account(null,'d48f21a6e0c94880b61daa2b9e5a2327');
+
 $response = $ac->info('A13');
+
 echo var_dump($response);
 
