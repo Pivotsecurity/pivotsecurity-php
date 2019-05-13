@@ -28,5 +28,4 @@
   "autoload": {
     "psr-0": { "PivotSecurity\\" : "lib/" }
   }
-  }
 }
