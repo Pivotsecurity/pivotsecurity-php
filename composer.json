@@ -10,7 +10,6 @@
   "homepage": "https://www.pivotsecurity.com/",
   "license": "MIT",
   "minimum-stability":"dev",
-  "version": "1.0.1",
   "type": "library",
   "authors": [
     {
@@ -29,10 +28,5 @@
   },
   "autoload": {
     "psr-0": { "PivotSecurity\\" : "lib/" }
-  },
-  "extra": {
-    "branch-alias": {
-      "release": "1.0.1-dev"
-    }
   }
 }
