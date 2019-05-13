@@ -28,7 +28,7 @@ final class Account extends PSAuth
 	}
 	
 	public static function createCustomer($uid = null, $email = null, $channel = 'EMAIL'){
-		return self::makerequest(self::OP_CREATE, array("uid"=>$uid, 'email' => $email, 'channel' = $channel));
+		return self::makerequest(self::OP_CREATE, array("uid"=>$uid, 'email' => $email, 'channel' => $channel));
 	}
 	public static function info($uid = null, $email = null){
 		return self::makerequest(self::OP_INFO, array("uid"=>$uid, 'email' => $email));
