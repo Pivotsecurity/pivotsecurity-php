@@ -8,7 +8,7 @@ Read full docs: https://github.com/Pivotsecurity/pivotsecurity-php/tree/master/d
 
 ## Prerequisites
 
-- PHP 4.X, 5.X, 7.X
+- PHP 5.X, 7.X
 
 ## Install Package
 
