@@ -5,7 +5,7 @@ namespace PivotSecurity;
 abstract class PSAuth{
 
 		protected static $key = null;
-		protected static $format = 1; // 1- json, 2 - PHP Array
+		protected static $format = 2; // 1- json, 2 - PHP Array
 		protected static $base_url = "https://api.pivotsecurity.com/api/";
 		
 	    public function __construct($key){
@@ -32,11 +32,11 @@ abstract class PSAuth{
 				$response = \Httpful\Request::post(self::$base_url . $path, json_encode($params))
 				->basicAuth(self::$key,'')
 				->send();
-				if ($response->code == 200){
+				if ($response->code >= 200 && $response->code < 300){
 					if (self::$format == 1){
-						return json_encode($response->body);
+						return json_decode($response, true);
 					}else{
-						return $response->body;
+						return $response;
 					}
 				}
 				return self::$codes[strval($response->code)];
