@@ -5,7 +5,7 @@ namespace PivotSecurity;
 abstract class PSAuth{
 
 		protected static $key = null;
-		protected static $format = 2; // 1- json, 2 - PHP Array
+		protected static $format = 2; // 1- json, 2 - RAW data
 		protected static $base_url = "https://api.pivotsecurity.com/api/";
 		
 	    public function __construct($key){
